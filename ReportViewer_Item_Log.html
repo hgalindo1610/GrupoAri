@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Adding Telerik Windows Forms Report Viewer form log</title>
+    <style>
+        body {
+            background: #fff;
+            color: #505050;
+            font: 14px 'Segoe UI', tahoma, arial, helvetica, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        #header {
+            background: #efefef;
+            padding: 0;
+        }
+
+        /* Start: Toggle details */
+        label { 
+            top:0; 
+            left:0; 
+            font-weight:700; 
+            margin-top: 10px;
+            user-select: none;
+            -ms-user-select: none;
+        }
+
+            label:hover{
+                color: cadetblue;
+                border-color: #505050;
+            }
+
+        input#show, input#hide {
+            display:none;
+        }
+
+        ul#details {
+            transition: opacity 1s ease-out;
+            opacity: 0; 
+            height: 0;
+            font-size: 0;
+            overflow: hidden;
+        }
+
+        input#show:checked ~ .show:before {
+            content: "";
+        }
+
+        input#show:checked ~ .hide:before {
+            content: "Hide details";
+            border: solid;
+            padding: 3px;
+        }
+
+        input#hide:checked ~ .hide:before {
+            content: "";
+        }
+
+        input#hide:checked ~ .show:before {
+            content: "Show details"; 
+            border: solid;
+            padding: 3px;
+        }
+
+        input#show:checked ~ ul#details {
+            opacity: 1;
+            font-size: 100%;
+            height: auto;
+            padding: 10px;
+        }
+
+        input#hide:checked ~ ul#details {
+            transition: opacity 1s ease-out;
+            opacity: 0; 
+            height: 0;
+            font-size: 0;
+            overflow: hidden;
+        }
+
+        /* End: toggle details */
+
+
+        h1 {
+            font-size: 48px;
+            font-weight: normal;
+            margin: 0;
+            padding: 0 30px;
+            line-height: 150px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #fff;
+            background: #969696;
+            padding: 0 30px;
+            line-height: 50px;
+        }
+
+        #main {
+            padding: 5px 30px;
+        }
+
+        .section {
+            width: 21.7%;
+            float: left;
+            margin: 0 0 0 40px;
+        }
+
+            .section h2 {
+                font-size: 13px;
+                text-transform: uppercase;
+                margin: 0;
+                border-bottom: 1px solid silver;
+                padding-bottom: 12px;
+                margin-bottom: 8px;
+            }
+
+            .section.first {
+                margin-left: 0;
+                width: 25%
+            }
+
+                .section.first h2 {
+                    font-size: 20px;
+                    text-transform: none;
+                    margin-bottom: 16px;
+                    border: none;
+                }
+
+                .section.first li {
+                    border-top: 1px solid silver;
+                    padding: 8px 0;
+                }
+
+            .section.last {
+                margin-right: 0;
+                width: 70%;
+            }
+            
+            .section.last h2 {
+                    font-size: 20px;
+                    text-transform: none;
+                    margin-bottom: 5px;
+                    border: none;
+                }
+
+            .section.last li {
+                padding: 4px 0;
+                border-bottom: solid;
+                border-bottom-width: 1px;
+                border-color: lightgray;
+            }
+            
+            .section.last ul{
+                padding-bottom:10px;   
+                margin-bottom: 10px; 
+            }
+            
+                
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            line-height: 20px;
+        }
+
+
+
+        a {
+            color: #267cb2;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <p><span style="color: red;">ERROR!</span> An error occurred while adding a Form with Windows Forms Report Viewer</p>
+    </div>
+
+    <div id="main">
+        <div class="section first">
+            <h2>Telerik Windows Form Report Viewer enabled application consists of: </h2>
+            <ul>
+                <li>Reference to Telerik.ReportViewer.WinForms</li>
+                <li>Form with <a href="http://www.telerik.com/help/reporting/winforms-report-viewer.html">Windows Form Report Viewer</a></li>
+            </ul>
+        </div>
+
+        <div class="section last">
+            <h2>Summary</h2>
+            <ul style="padding-bottom: 10px; padding-left: 7px;">
+                <li style="color: #FF0000;">Error: Fail to add project reference</li>
+<li style="color: #FF6600;">Warning: Could not add connection string to the configuration file. Please add the following connection string manually:</li>
+<li style="color: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;connectionStrings&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;add name="Traconsa.My.MySettings.Fares2016"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connectionString="Data Source=192.168.1.10;Initial Catalog=Fares2016;User ID=sistemas;Password=S1stemas2016"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;providerName="System.Data.SqlClient" /&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/connectionStrings&gt;</li>
+<li style="color: none;"></li>
+<li style="color: none;">Added ReportViewerProductos.vb</li>
+<li style="color: none;">Added ReportViewerProductos.Designer.vb</li>
+<li style="color: none;">Added ReportViewerProductos.resx</li>
+
+            </ul>
+
+            <input type="radio" id="show" name="group" />   
+            <input type="radio" id="hide" name="group" checked />
+            <label for="hide" class="hide" unselectable="on"></label>
+            <label for="show" class="show" unselectable="on"></label> 
+
+            <ul id="details">
+                17/11/2016 11:16:41
+<li style="color: none;">Check Framework Support</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : CrystalDecisions.CrystalReports.Engine</li>
+<li style="color: none;">Assembly Version: 13.0.2000.0</li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : CrystalDecisions.ReportSource</li>
+<li style="color: none;">Assembly Version: 13.0.2000.0</li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : CrystalDecisions.Shared</li>
+<li style="color: none;">Assembly Version: 13.0.2000.0</li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : DevComponents.DotNetBar2</li>
+<li style="color: none;">Assembly Version: 11.3.0.0</li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : System</li>
+<li style="color: none;">Assembly Version: </li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : System.Data</li>
+<li style="color: none;">Assembly Version: </li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : System.Deployment</li>
+<li style="color: none;">Assembly Version: </li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : System.Drawing</li>
+<li style="color: none;">Assembly Version: </li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : System.Windows.Forms</li>
+<li style="color: none;">Assembly Version: </li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : System.Xml</li>
+<li style="color: none;">Assembly Version: </li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : System.Core</li>
+<li style="color: none;">Assembly Version: </li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : System.Xml.Linq</li>
+<li style="color: none;">Assembly Version: </li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : System.Data.DataSetExtensions</li>
+<li style="color: none;">Assembly Version: </li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : Telerik.Reporting</li>
+<li style="color: none;">Assembly Version: 10.0.16.204</li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : Telerik.Reporting.XpsRendering</li>
+<li style="color: none;">Assembly Version: 10.0.16.204</li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Assembly name is null: False</li>
+<li style="color: none;">Assembly : Telerik.ReportViewer.WinForms</li>
+<li style="color: none;">Assembly Version: 10.0.16.204</li>
+<li style="color: none;">Product Version: 10.0.16.204</li>
+<li style="color: none;">Verify Telerik Reporting Version: True</li>
+<li style="color: none;">Initialize available report types.</li>
+<li style="color: none;">Class with name Listado_de_Productos is found in Traconsa project.</li>
+<li style="color: none;">Get project references.</li>
+<li style="color: #FF0000;">Error: Fail to add project reference</li>
+<li style="color: none;">Class with name Listado_de_Productos is found in Traconsa project.</li>
+<li style="color: none;">Connection Name Traconsa.My.MySettings.Fares2016</li>
+<li style="color: none;">Connection String Data Source=192.168.1.10;Initial Catalog=Fares2016;User ID=sistemas;Password=S1stemas2016</li>
+<li style="color: none;">Connection Type Configuration</li>
+<li style="color: none;">Connection ProviderName System.Data.SqlClient</li>
+<li style="color: none;">System.ArgumentException: El valor no está dentro del intervalo esperado.
+   en Microsoft.VisualStudio.Editors.SettingsDesigner.DesignTimeSettings.Add(DesignTimeSettingInstance Instance, Boolean MakeNameUnique)
+   en Microsoft.VisualStudio.Editors.SettingsGlobalObjects.SettingsFileGlobalObject.GlobalSettingsPropertyCollection.OnAddComplete(SettingsProperty prop)
+   en System.Configuration.SettingsPropertyCollection.Add(SettingsProperty property)
+   en Microsoft.VSDesigner.VSDesignerPackage.AppSettingsHelper.AddConnectionToAppSettings(IServiceProvider serviceProvider, Project project, DataConnection connection)
+   en Microsoft.VSDesigner.VSDesignerPackage.GlobalConnectionService.Microsoft.VSDesigner.VSDesignerPackage.IGlobalConnectionService.AddConnectionToAppSettings(IServiceProvider serviceProvider, Project project, DataConnection connection)
+   en Telerik.Reporting.Design.VisualStudio.Data.DataConnectionManager.AddConfigurationConnection(DataConnectionInfo dataConnectionInfo, Project targetProject)
+   en Telerik.ReportViewer.Design.Common.ConnectionStringManager.InsertConnectionsForReport(Type type, Project targetProject)</li>
+<li style="color: #FF6600;">Warning: Could not add connection string to the configuration file. Please add the following connection string manually:</li>
+<li style="color: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;connectionStrings&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;add name="Traconsa.My.MySettings.Fares2016"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connectionString="Data Source=192.168.1.10;Initial Catalog=Fares2016;User ID=sistemas;Password=S1stemas2016"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;providerName="System.Data.SqlClient" /&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/connectionStrings&gt;</li>
+<li style="color: none;"></li>
+<li style="color: none;">Cancel the form closing: False</li>
+<li style="color: none;">Add project references</li>
+<li style="color: none;">Reference already available: Telerik.Reporting, Version=10.0.16.204, Culture=neutral, PublicKeyToken=a9d7983dfcc261be</li>
+<li style="color: none;">Reference already available: Telerik.ReportViewer.WinForms, Version=10.0.16.204, Culture=neutral, PublicKeyToken=a9d7983dfcc261be</li>
+<li style="color: none;">Reference already available: Telerik.Reporting.XpsRendering, Version=10.0.16.204, Culture=neutral, PublicKeyToken=a9d7983dfcc261be</li>
+<li style="color: none;">Adding TelerikViewerForm.vb project item</li>
+<li style="color: none;">Added ReportViewerProductos.vb</li>
+<li style="color: none;">Adding TelerikViewerForm.Designer.vb.Trdx project item</li>
+<li style="color: none;">Adding TelerikViewerForm.Designer.vb.Type project item</li>
+<li style="color: none;">Added ReportViewerProductos.Designer.vb</li>
+<li style="color: none;">Adding TelerikViewerForm.resx project item</li>
+<li style="color: none;">Added ReportViewerProductos.resx</li>
+
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
